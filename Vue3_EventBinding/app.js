@@ -3,7 +3,7 @@ const app = Vue.createApp({
 	data() {
 		return {
 			count: 0,
-			name: ''
+			name: 'Chinnapu Reddy'
 		};
 	},
 	methods: {
@@ -15,6 +15,10 @@ const app = Vue.createApp({
 		},
 		setName(event, lastName) {
 			this.name = event.target.value + lastName;
+		},
+		onSubmit(event) {
+			// event.preventDefault();
+			alert('form submitted');
 		}
 	}
 });
