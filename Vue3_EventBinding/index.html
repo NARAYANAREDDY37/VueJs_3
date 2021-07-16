@@ -13,25 +13,32 @@
 		<title>VueJs 3</title>
 	</head>
 	<body>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h1>Posts Data</h1>
-					<hr />
-
-					<div id="app">
-						<h3>{{title}}</h3>
-						<div>
-							<a v-bind:href="link">Click here to learn Vue 3</a>
+		<div id="app">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mt-3">
+							<button class="btn btn-primary m-2" v-on:click="onIncrement()">
+								Increment
+							</button>
+							<button class="btn btn-primary" v-on:click="onDecrement()">
+								Decrement
+							</button>
+							<h1>{{count}}</h1>
 						</div>
 
-						<div v-html="getCourses()"></div>
-						<div>{{getText()}}</div>
+						<div class="mt-3">
+							<div class="form-group">
+								<label>Enter Your Name</label>
+								<input type="text" class="form-control" v-on:input="setName($event, ' Reddy')" />
+							</div>
+
+							<div>your name is: {{name}}</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
 		<!-- CDN link of vuejs 3 -->
 		<script src="https://unpkg.com/vue@next"></script>
 		<!-- Local script files -->
