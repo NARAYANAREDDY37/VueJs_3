@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<title>VueJs 3</title>
+	</head>
+	<body>
+		<div id="app">
+			<div class="container">
+				<div class="d-flex flex-column">
+					<div
+						class="box"
+						:class="boxASelected ? 'active' : '' "
+						@click="onBoxSelected('A')"
+					></div>
+					<div
+						class="box"
+						:class="{active: boxBSelected, 'class2': true}"
+						@click="onBoxSelected('B')"
+					></div>
+					<div
+						class="box"
+						:style="{backgroundColor: boxCSelected ? 'green': '#fff'}"
+						@click="onBoxSelected('C')"
+					></div>
+				</div>
+				<div class="box" :class="boxDClasses" @click="onBoxSelected('D')"></div>
+        <div class="box" :class="[{active: boxESelected}, 'box', 'class3']" @click="onBoxSelected('E')"></div>
+			</div>
+		</div>
+		<!-- CDN link of vuejs 3 -->
+		<script src="https://unpkg.com/vue@next"></script>
+		<!-- Local script files -->
+		<script src="app.js"></script>
+		<style>
+			.box {
+				width: 100%;
+				height: 150px;
+				border: 1px solid #000;
+				margin-top: 10px;
+			}
+			.active {
+				background-color: red;
+			}
+		</style>
+	</body>
+</html>
