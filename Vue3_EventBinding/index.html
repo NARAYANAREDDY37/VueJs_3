@@ -33,12 +33,13 @@
 								<input
 									type="text"
 									class="form-control"
-									v-on:input="setName($event, ' Reddy')"
+									v-model="name"
+									v-on:keyup.enter="setConfirmedName"
 								/>
 							</div>
 
 							<div v-once>your Initial name is: {{name}}</div>
-							<div>your name is: {{name}}</div>
+							<div>your name is: {{fullName}}</div>
 
 							<div class="mt-3">
 								<form v-on:submit.prevent="onSubmit">
